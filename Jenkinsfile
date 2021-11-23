@@ -45,6 +45,7 @@ pipeline {
                 }
             }
             steps {
+                // 实际使用过程，请把 $CI_COMMIT_REF_NAME $CI_PROJECT_ID 传到 dockerfile中，打包到镜像里
                 sh 'go mod vendor'
                 sh 'go run main.go'
             }

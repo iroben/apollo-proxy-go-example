@@ -23,8 +23,8 @@ var (
 
 func init() {
 	apollo := os.Getenv("APOLLO")
-	branchName := os.Getenv("BRANCH_NAME")
-	projectId := os.Getenv("PROJECT_ID")
+	branchName := os.Getenv("CI_COMMIT_REF_NAME")
+	projectId := os.Getenv("CI_PROJECT_ID")
 	if apollo != "" {
 		ApolloProxy = apollo
 	}

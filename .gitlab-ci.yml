@@ -6,6 +6,7 @@ test build:
   image: golang:1.14
   stage: build
   script:
+    # 实际使用过程，请把 $CI_COMMIT_REF_NAME $CI_PROJECT_ID 传到 dockerfile中，打包到镜像里
     - export APOLLO=$APOLLO_FAT
     - go mod vendor
     - go run main.go
@@ -16,6 +17,7 @@ prod build:
   image: golang:1.14
   stage: build
   script:
+    # 实际使用过程，请把 $CI_COMMIT_REF_NAME $CI_PROJECT_ID 传到 dockerfile中，打包到镜像里
     - export APOLLO=$APOLLO_PROD
     - go mod vendor
     - go run main.go
