@@ -1,3 +1,5 @@
+------
+
 该项目可用于`jenkins`的**多分支流水线**和`gitlab`的**docker executor**流水线
 
 ## 用jenkins集成
@@ -28,3 +30,12 @@ variables:
 `test` 分支会读取 `APOLLO_FAT` 下的配置
 
 `master` 分支会读取 `APOLLO_PROD` 下的配置
+
+
+------
+
+# 跟前端部署的区别
+
+配置是运行过程中动态加载的，如果没有服务类的配置，可以把触发流水线功能关了，
+
+如果实现 `ConfigUpdate` 回调，重新创建服务类实例，也可以把触发流水线功能关了
